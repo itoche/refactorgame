@@ -3,31 +3,31 @@ package com.arhs.spikeseed.agile.refactoring.game;
 
 public class Game {
 
-        public StringBuffer board;
+    public StringBuffer board;
 
-        public Game(String s) {board = new StringBuffer(s);}
+    public Game(String s) {board = new StringBuffer(s);}
 
-        public Game(StringBuffer s, int position, char player) {
-            board = new StringBuffer();
-            board.append(s);
-            board.setCharAt(position, player);
-        }
+    public Game(StringBuffer s, int position, char player) {
+        board = new StringBuffer();
+        board.append(s);
+        board.setCharAt(position, player);
+    }
 
-        public int move(char player) {
-            for (int i = 0; i < 9; i++) {
-                if (board.charAt(i) == '-') {
-                    Game game = play(i, player);
-                    if (game.winner() == player)
-                        return i;
-                }
-            }
-
-            for (int i = 0; i < 9; i++) {
-                if (board.charAt(i) == '-')
+    public int move(char player) {
+        for (int i = 0; i < 9; i++) {
+            if (board.charAt(i) == '-') {
+                Game game = play(i, player);
+                if (game.winner() == player)
                     return i;
             }
-            return -1;
         }
+
+        for (int i = 0; i < 9; i++) {
+            if (board.charAt(i) == '-')
+                return i;
+        }
+        return -1;
+    }
 
 
 
