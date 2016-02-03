@@ -10,7 +10,7 @@ Game::Game(const std::string& s, int position, char player):board(s) {
 int Game::move(char player) {
     for (int i = 0; i < 9; i++) {
         if (board[i] == '-') {
-            Game game = play(i, player);
+        	Game game = play(i, player);
             if (game.winner() == player)
                 return i;
         }
