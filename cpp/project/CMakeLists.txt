@@ -12,6 +12,10 @@ else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
 endif()
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug)
+endif()
+
 
 set(GMOCK_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/contrib/gmock-1.7.0/include ${PROJECT_SOURCE_DIR}/contrib/gmock-1.7.0)
 set(GTEST_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/contrib/gmock-1.7.0/gtest/include ${PROJECT_SOURCE_DIR}/contrib/gmock-1.7.0/gtest)
