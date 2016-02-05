@@ -1,0 +1,2 @@
+PROJECT_NAME=refactorgame
+SHA1=$(git rev-parse HEAD)
